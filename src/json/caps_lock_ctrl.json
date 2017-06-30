@@ -1,0 +1,16 @@
+{
+    "title": "Change caps_lock key to escape and control",
+    "rules": [
+        {
+            "description": "Change caps_lock key to control. (Post escape key when pressed alone)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": <%= from("caps_lock", [], ["any"]) %>,
+                    "to": <%= to([["left_control"]]) %>,
+                    "to_if_alone": <%= to([["escape"]]) %>
+                }
+            ]
+        }
+    ] 
+}
